@@ -23,23 +23,23 @@ class DetailActivity : AppCompatActivity() {
                 binding.apply {
                     etNama.setText(selectedBarang.nama)
                     etJenis.setText(selectedBarang.jenis)
-                    etharga.setText(selectedBarang.harga.toString())
+//                    etharga.setText(selectedBarang.harga.toString())
                     btnUpdate.setOnClickListener {
                         val updatedBarang = selectedBarang.copy(
                             nama = etNama.text.toString(),
                             jenis = etJenis.text.toString(),
-                            harga = etharga.text.toString().toInt()
+//                            harga = etharga.text.toString().toInt()
                         )
                         appExecutors.diskIO.execute {
                             dao.update(updatedBarang)
-// Lakukan tindakan update lainnya jika diperlukan
+
                         }
                     }
                     btnDelete.setOnClickListener {
                         appExecutors.diskIO.execute {
                             dao.delete(selectedBarang)
-// Lakukan tindakan delete lainnya jika diperlukan
-                            finish() // Kembali ke MainActivity setelah menghapus
+
+                            finish()
                         }
                     }
                 }

@@ -16,5 +16,9 @@ data class Barang(
     val jenis: String,
 
     @ColumnInfo(name = "harga")
-    val harga: Int
+    val harga: Int,
+
+    @ColumnInfo(name = "imageUri")
+    val imageUri: String? = null
+
 )
